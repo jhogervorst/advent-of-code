@@ -11,7 +11,7 @@ $gears = [];
 $lines = file("input.txt", FILE_IGNORE_NEW_LINES);
 $lines = [
 	str_repeat(".", 1 + strlen($lines[0]) + 1),
-	...array_map(fn (string $line) => ".{$line}.", $lines),
+	...array_map(fn(string $line) => ".{$line}.", $lines),
 	str_repeat(".", 1 + strlen($lines[0]) + 1),
 ];
 

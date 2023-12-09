@@ -5,7 +5,7 @@ declare(strict_types=1);
 $fp = fopen("input.txt", "r");
 $times = array_values(array_filter(array_map("intval", explode(" ", fgets($fp)))));
 $distances = array_values(array_filter(array_map("intval", explode(" ", fgets($fp)))));
-$games = array_map(fn ($i) => ["time" => $times[$i], "distance" => $distances[$i]], array_keys($times));
+$games = array_map(fn($i) => ["time" => $times[$i], "distance" => $distances[$i]], array_keys($times));
 
 $total_options = 1;
 foreach ($games as $game) {

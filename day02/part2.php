@@ -18,7 +18,7 @@ while ($line = fgets($fp)) {
 			$min_colors[$color] = max($min_colors[$color], $amount);
 		}
 	}
-	$power = array_reduce($min_colors, fn ($carry, $item) => $carry * $item, 1);
+	$power = array_reduce($min_colors, fn($carry, $item) => $carry * $item, 1);
 	echo "Game {$game}: power {$power}\n";
 	$sum += $power;
 }

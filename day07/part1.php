@@ -39,8 +39,8 @@ function hand_cmp(string $hand1, string $hand2) {
 }
 
 $games = file("input.txt", FILE_IGNORE_NEW_LINES);
-$games = array_map(fn (string $line): array => array_combine(["hand", "bid"], explode(" ", $line)), $games);
-usort($games, fn (array $game1, array $game2): int => hand_cmp($game1["hand"], $game2["hand"]));
+$games = array_map(fn(string $line): array => array_combine(["hand", "bid"], explode(" ", $line)), $games);
+usort($games, fn(array $game1, array $game2): int => hand_cmp($game1["hand"], $game2["hand"]));
 
 $sum = 0;
 foreach ($games as $i => $game) {

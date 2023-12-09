@@ -28,7 +28,7 @@ $steps_to_destination = [];
 
 for ($i = 0; count($steps_to_destination) < count($positions); ++$i) {
 	$instruction = $instructions[$i % count($instructions)];
-	$positions = array_map(fn (string $position): string => $map[$position][$instruction], $positions);
+	$positions = array_map(fn(string $position): string => $map[$position][$instruction], $positions);
 	foreach ($positions as $j => $position) {
 		if (at_destination($position) && !array_key_exists($j, $steps_to_destination)) {
 			$steps_to_destination[$j] = $i + 1;

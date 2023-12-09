@@ -7,9 +7,9 @@ define("JOKER", "J");
 
 function hand_type(string $hand): string {
 	if (($joker_pos = strpos($hand, JOKER)) !== false) {
-		$hands = array_map(fn (string $card): string => substr_replace($hand, $card, $joker_pos, 1), array_diff(CARDS, [JOKER]));
-		$hands = array_map(fn (string $hand): string => hand_type($hand), $hands);
-		usort($hands, fn (string $type1, string $type2): int => -strcmp($type1, $type2));
+		$hands = array_map(fn(string $card): string => substr_replace($hand, $card, $joker_pos, 1), array_diff(CARDS, [JOKER]));
+		$hands = array_map(fn(string $hand): string => hand_type($hand), $hands);
+		usort($hands, fn(string $type1, string $type2): int => -strcmp($type1, $type2));
 		return $hands[0];
 	}
 
@@ -47,8 +47,8 @@ function hand_cmp(string $hand1, string $hand2) {
 }
 
 $games = file("input.txt", FILE_IGNORE_NEW_LINES);
-$games = array_map(fn (string $line): array => array_combine(["hand", "bid"], explode(" ", $line)), $games);
-usort($games, fn (array $game1, array $game2): int => hand_cmp($game1["hand"], $game2["hand"]));
+$games = array_map(fn(string $line): array => array_combine(["hand", "bid"], explode(" ", $line)), $games);
+usort($games, fn(array $game1, array $game2): int => hand_cmp($game1["hand"], $game2["hand"]));
 
 $sum = 0;
 foreach ($games as $i => $game) {
