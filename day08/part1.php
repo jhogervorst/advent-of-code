@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 $instructions = $map = [];
 
 $fp = fopen("input.txt", "r");

@@ -61,7 +61,7 @@ function cycle_platform(array $columns): array {
 
 function detect_loop(array $cycles): ?int {
 	$last_cycle = $cycles[count($cycles) - 1];
-	$occurrences = array_filter($cycles, fn (string $cycle): bool => $cycle == $last_cycle);
+	$occurrences = array_filter($cycles, fn(string $cycle): bool => $cycle == $last_cycle);
 	if (count($occurrences) < 3) {
 		return null;
 	}

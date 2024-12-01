@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function at_start(string $position): bool {
 	return preg_match("/A$/", $position);
 }

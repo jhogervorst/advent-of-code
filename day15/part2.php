@@ -11,7 +11,7 @@ function hash_string(string $string): int {
 }
 
 function find_lens(array $box, string $label): int {
-	$filtered = array_filter($box, fn (array $lens): bool => $lens["label"] === $label);
+	$filtered = array_filter($box, fn(array $lens): bool => $lens["label"] === $label);
 	return empty($filtered) ? -1 : array_keys($filtered)[0];
 }
 

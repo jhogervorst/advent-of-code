@@ -22,7 +22,7 @@ function last(array $array, int $count = 1): mixed
 // Map
 
 function parse_map(string $file): array {
-	$parse_line = fn (string $line): array => array_map("intval", str_split($line));
+	$parse_line = fn(string $line): array => array_map("intval", str_split($line));
 	return array_map($parse_line, file($file, FILE_IGNORE_NEW_LINES));
 }
 
